@@ -8,5 +8,6 @@ export interface ItemCompra{
     direccion:string;
     telefono:string;
     correo:string;
+    total:number;
     carrito:ItemCarrito[];
 }

@@ -6,6 +6,7 @@ import { RutaMainMenuComponent } from './rutas/ruta-main-menu/ruta-main-menu.com
 import { RutaMenuSistemaOperativoComponent } from './rutas/ruta-menu-sistema-operativo/ruta-menu-sistema-operativo.component';
 import { RutaMenuAplicacionComponent } from './rutas/ruta-menu-aplicacion/ruta-menu-aplicacion.component';
 import { RutaMenuComprarComponent } from './rutas/ruta-menu-comprar/ruta-menu-comprar.component';
+import { RutaMenuRevisarComprasComponent } from './rutas/ruta-menu-revisar-compras/ruta-menu-revisar-compras.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     redirectTo: '/cajero/app',
     pathMatch: 'full'
   },
+  {
+    path:'revisar-compras',
+    component:RutaMenuRevisarComprasComponent
+  }
+  ,
   {
     path:'menu-comprar',
     component:RutaMenuComprarComponent

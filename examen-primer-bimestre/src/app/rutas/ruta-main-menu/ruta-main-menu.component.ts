@@ -14,6 +14,7 @@ export class RutaMainMenuComponent implements OnInit {
   }
 
   revisarCompras(){
+    this.router.navigateByUrl("/revisar-compras");
 
   }
   administrarSistema(){

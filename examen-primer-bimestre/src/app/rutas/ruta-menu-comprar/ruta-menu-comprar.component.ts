@@ -112,7 +112,8 @@ export class RutaMenuComprarComponent implements OnInit {
       direccion:this.direccion,
       telefono:this.telefono,
       correo:this.correo,
-      carrito:this.carrito
+      carrito:this.carrito,
+      total:this.total
 
     }
     this.servicioCarrito.agregarVenta(itemCompra);

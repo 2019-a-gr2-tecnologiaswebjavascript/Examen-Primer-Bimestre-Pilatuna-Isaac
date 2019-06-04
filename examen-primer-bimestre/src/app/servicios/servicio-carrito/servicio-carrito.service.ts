@@ -12,12 +12,24 @@ export class ServicioCarritoService {
   agregarVenta(itemCompra:ItemCompra){
     
     this.totalVentas.push(itemCompra);
-    console.log(this.totalVentas)
+    this.guardarBase();
 
+  }
+
+  iniciarServicio(){
+    this.leerBase();
   }
 
   obtenerFacturas():ItemCompra[]{
     return this.totalVentas;
+  }
+  guardarBase(){
+    const data={'listaFacturas':this.totalVentas}
+    localStorage.setItem('dataFacturas', JSON.stringify(data));
+  }
+  leerBase(){
+    var getObject = JSON.parse(localStorage.getItem('dataFacturas'));
+    this.totalVentas=getObject['listaFacturas'];
   }
 
   buscarFacturas(nombre:string){

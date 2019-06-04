@@ -13,6 +13,7 @@ export class RutaMenuRevisarComprasComponent implements OnInit {
   listaFacturas:ItemCompra[]=[];
   busqueda:string='';
   ngOnInit() {
+    this.servicioCarrito.iniciarServicio();
     this.listaFacturas=this.servicioCarrito.obtenerFacturas();
   }
 

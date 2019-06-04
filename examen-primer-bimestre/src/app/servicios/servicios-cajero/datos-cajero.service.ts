@@ -17,6 +17,14 @@ export class DatosCajeroService {
     return this.nombreCajero;
   }
 
+  existeCajero():boolean{
+    if(this.nombreCajero.length==0){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   guardarBase(){
     const data={'nombreCajero':this.nombreCajero}
     localStorage.setItem('datosCajero', JSON.stringify(data));

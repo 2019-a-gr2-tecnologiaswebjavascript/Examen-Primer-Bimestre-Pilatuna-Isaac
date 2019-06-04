@@ -11,7 +11,6 @@ export class ServicioCarritoService {
 
   agregarVenta(itemCompra:ItemCompra){
     
-    console.log('ENTRA')
     this.totalVentas.push(itemCompra);
     console.log(this.totalVentas)
 

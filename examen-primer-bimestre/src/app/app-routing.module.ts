@@ -7,6 +7,7 @@ import { RutaMenuSistemaOperativoComponent } from './rutas/ruta-menu-sistema-ope
 import { RutaMenuAplicacionComponent } from './rutas/ruta-menu-aplicacion/ruta-menu-aplicacion.component';
 import { RutaMenuComprarComponent } from './rutas/ruta-menu-comprar/ruta-menu-comprar.component';
 import { RutaMenuRevisarComprasComponent } from './rutas/ruta-menu-revisar-compras/ruta-menu-revisar-compras.component';
+import { ExisteCajeroService } from './servicios/guards/existe-cajero.service';
 
 const routes: Routes = [
   {
@@ -20,25 +21,40 @@ const routes: Routes = [
   },
   {
     path:'revisar-compras',
-    component:RutaMenuRevisarComprasComponent
+    component:RutaMenuRevisarComprasComponent,
+    canActivate:[
+     ExisteCajeroService
+    ],
   }
   ,
   {
     path:'menu-comprar',
-    component:RutaMenuComprarComponent
+    component:RutaMenuComprarComponent,
+    canActivate:[
+     ExisteCajeroService
+    ],
   }
   ,
   {
     path:'main-menu',
-    component: RutaMainMenuComponent
+    component: RutaMainMenuComponent,
+    canActivate:[
+     ExisteCajeroService
+    ],
   },
   {
     path:'menu-sistema-operativo',
-    component:RutaMenuSistemaOperativoComponent
+    component:RutaMenuSistemaOperativoComponent,
+    canActivate:[
+     ExisteCajeroService
+    ],
   },
   {
     path:'menu-aplicacion',
-    component:RutaMenuAplicacionComponent
+    component:RutaMenuAplicacionComponent,
+    canActivate:[
+     ExisteCajeroService
+    ],
   }
 
   ,

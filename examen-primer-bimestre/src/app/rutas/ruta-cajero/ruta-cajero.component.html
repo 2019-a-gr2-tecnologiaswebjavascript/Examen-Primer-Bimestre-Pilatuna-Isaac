@@ -1,0 +1,21 @@
+<body>
+    <div class="contenedor-cadet-blue">
+      <form
+      #formularioCajero="ngForm"
+      novalidate
+      (submit)="guardarCajero(formularioCajero)"
+      >
+        <div class="row">
+          
+          <label for="nombre" class="titulo-blanco">Nombre del cajero</label>
+        </div>
+        <br>
+        <div class="row">
+          
+          <input style="width: 100%;margin-left: 10%;margin-right: 10%" id="nombre" name="nombreCajero" type="text" placeholder="Nombre del cajero" [(ngModel)]="nombreCajero">
+        </div>
+        <br>
+        <div class="text-center"><button class="btn btn-success btn-sx" >Entrar</button></div>
+      </form>
+    </div>
+  </body>

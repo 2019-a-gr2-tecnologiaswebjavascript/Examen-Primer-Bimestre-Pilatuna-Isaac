@@ -1,0 +1,109 @@
+
+<div class="contenedor-antique" style="margin:5%">
+  <div class="row">
+    <h1 style="width: 100%;text-align: center">
+      Menú de compras
+    </h1>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-5" style="margin-right: 2%">
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" placeholder="Nombre" style="width: 100%" [(ngModel)]="nombre">
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="RUC/Cédula" style="width: 100%" [(ngModel)]="identificacion">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" placeholder="Dirección" style="width: 100%" [(ngModel)]="direccion">
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Teléfono" style="width: 100%" [(ngModel)]="telefono">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <input type="text" placeholder="Correo" style="width: 100%" [(ngModel)]="correo">
+      </div>
+      <br>
+      <div class="row">
+          <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Versión </th>
+                  <th>Peso en GB</th>
+                  <th>Costo</th>
+                  <th>Agregar</th>
+        
+        
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active" *ngFor="let item of listaAplicaciones">
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.version}}</td>
+                  <td>{{item.peso_gb}}</td>
+                  <td>{{item.costo}}</td>
+                  <td>
+                    <button class="btn btn-success" (click)="agregarAplicacion(item.nombre,item.version,item.costo,item.id)">+1</button>
+                  </td>
+                </tr>
+        
+              </tbody>
+            </table>
+
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+
+            <button class="btn btn-success" (click)="finalizarCompra()" >Finalizar compra</button>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div class="col-md-5" style="margin-left: 2%">
+      <div class="row">
+        <h3 style="text-align: center;width: 100%">Cajero: {{nombreCajero}}</h3>
+        </div>
+      <div class="row">
+          <h3 style="text-align: center;width: 100%">Total: ${{total}} </h3>
+        </div>
+      <div class="row">
+          <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Versión </th>
+                  <th>Cantidad</th>
+                  <th>Costo</th>
+                  <th>Costo Total</th>
+                  <th>Eliminar</th>
+        
+        
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="active" *ngFor="let item of carrito">
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.version}}</td>
+                  <td>{{item.cantidad}}</td>
+                  <td>{{item.costo}}</td>
+                  <td>{{item.costoTotal}}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="eliminarAplicacion(item.id,item.costo)">-1</button>
+                  </td>
+                </tr>
+        
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -117,6 +117,9 @@ export class RutaMenuComprarComponent implements OnInit {
 
     }
     this.servicioCarrito.agregarVenta(itemCompra);
+    this.total=0;
+    this.carrito=[];
+  
     alert('COMPRA SATISFACTORIA');
   }
 

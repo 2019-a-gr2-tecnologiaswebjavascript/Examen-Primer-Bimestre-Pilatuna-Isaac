@@ -45,4 +45,17 @@ export class ServicioCarritoService {
     var listaSearch=indices.map(i => this.totalVentas[i]);
     return listaSearch;
   }
+  buscarFacturasPorCajero(nombre:string){
+    var indices=[];
+    this.totalVentas.forEach(
+      function(item,index,array){
+        if(item.nombreCajero.includes(nombre)){
+          indices.push(index);
+        }
+      }
+    );
+    
+    var listaSearch=indices.map(i => this.totalVentas[i]);
+    return listaSearch;
+  }
 }

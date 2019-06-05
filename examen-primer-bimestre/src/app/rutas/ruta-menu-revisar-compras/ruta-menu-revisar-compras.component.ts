@@ -12,13 +12,30 @@ export class RutaMenuRevisarComprasComponent implements OnInit {
   constructor(private readonly servicioCarrito:ServicioCarritoService) { }
   listaFacturas:ItemCompra[]=[];
   busqueda:string='';
+  inputTipoBusqueda:boolean=true;
+  flag:boolean=true;
   ngOnInit() {
     this.servicioCarrito.iniciarServicio();
     this.listaFacturas=this.servicioCarrito.obtenerFacturas();
   }
 
+  buscarPorCajero(){
+    this.flag=false;
+  }
+
+  buscarPorCliente(){
+    this.flag=true;
+  }
+
   buscarFactura(){
-    this.listaFacturas=this.servicioCarrito.buscarFacturas(this.busqueda);
+    if(this.flag===true){
+      this.listaFacturas=this.servicioCarrito.buscarFacturas(this.busqueda);
+      console.log('Buscar CLiente')
+
+    }else{
+      this.listaFacturas=this.servicioCarrito.buscarFacturasPorCajero(this.busqueda);
+      console.log('Buscar cajero');
+    }
   }
 
 }
